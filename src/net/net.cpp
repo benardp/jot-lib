@@ -24,7 +24,7 @@
  * ------------------------------------------------------------------------- */
 
 /* ANSI includes */
-#ifdef macosx
+#ifdef __APPLE__
 #include <sys/ioctl.h>
 #endif
 

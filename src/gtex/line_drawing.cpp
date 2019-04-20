@@ -944,13 +944,11 @@ LineDrawingGLSLMode::StripCB::faceCB(CBvert* v, CBface* f)
    glVertexAttrib1fARB(mode->k1_attrib_loc, static_cast<GLfloat>(v->k1()));
    glVertexAttrib1fARB(mode->k2_attrib_loc, static_cast<GLfloat>(v->k2()));
    
-   double *dcurv = &(v->dcurv_tensor().dcurv[0]);
-   
    glVertexAttrib4fARB(mode->dcurv_tensor_attrib_loc,
-                       static_cast<GLfloat>(dcurv[0]),
-                       static_cast<GLfloat>(dcurv[1]),
-                       static_cast<GLfloat>(dcurv[2]),
-                       static_cast<GLfloat>(dcurv[3]));
+                       static_cast<GLfloat>(v->dcurv_tensor().dcurv[0]),
+                       static_cast<GLfloat>(v->dcurv_tensor().dcurv[1]),
+                       static_cast<GLfloat>(v->dcurv_tensor().dcurv[2]),
+                       static_cast<GLfloat>(v->dcurv_tensor().dcurv[3]));
 
    // vertex coords
    glVertex3dv(v->loc().data());

@@ -25,7 +25,11 @@
 #include <cassert>
 
 #include "gtex/gl_extensions.hpp"
+#ifdef __APPLE__
+#include <OpenGL/glu.h>
+#else
 #include <GL/glu.h>
+#endif
 
 #include "gtex/rendering_mode.hpp"
 #include "gtex/curvature_texture.hpp"

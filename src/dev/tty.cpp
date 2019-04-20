@@ -754,7 +754,7 @@ int TTYfd::setup()
 #ifndef WIN32
    _ios_current.c_cc[VMIN]  = VMIN_CHARACTERS;
    _ios_current.c_cc[VTIME] = VTIME_LENGTH;
-#ifndef macosx
+#ifndef __APPLE__
    _ios_current.c_iflag &= ~(PARMRK|INPCK|ISTRIP|INLCR|IGNCR|ICRNL|IUCLC|
 			     IXON|IXANY|IXOFF
 #ifdef IMAXBEL

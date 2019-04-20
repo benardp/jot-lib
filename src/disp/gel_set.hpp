@@ -27,6 +27,7 @@
 #define _GEL_SET_H_
 
 #include "disp/gel.hpp"
+#include "disp/ray.hpp"
 
 MAKE_PTR_SUBC(GELset,GEL);
 typedef const GELset CGELset;
@@ -45,8 +46,7 @@ class GELset : public GEL {
   void          clear()                       { _gel_list.clear(); }
   
   // display
-  virtual RAYhit &intersect  (RAYhit  &r,mlib::CWtransf&m=mlib::Identity,
-			      int uv=0)const {return _gel_list.intersect(r, m);}
+  virtual RAYhit& intersect(RAYhit  &r,mlib::CWtransf&m=mlib::Identity,int uv=0)const {return _gel_list.intersect(r, m);}
   virtual bool cull (const VIEW *v) const {return _gel_list.cull(v);}
 
   virtual int  draw (CVIEWptr &v)       {return _gel_list.draw(v);}

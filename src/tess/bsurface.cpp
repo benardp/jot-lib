@@ -607,7 +607,11 @@ Bsurface::regular_color() const
 /**********************************************************************
  * GLU tessellation routines
  **********************************************************************/
+#ifdef __APPLE__
+#include <OpenGL/glu.h>
+#else
 #include <GL/glu.h>
+#endif
 
 // declarations:
 

@@ -19,7 +19,11 @@
 #include "dev/dev.hpp"
 #include "std/config.hpp"
 
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
 #include <GL/glut.h>
+#endif
 #include "glut_winsys.hpp"
 #include "tty_glut.hpp"
 #include "mouse.hpp"

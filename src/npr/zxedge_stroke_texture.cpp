@@ -25,7 +25,11 @@
 #include "zxedge_stroke_texture.hpp"
 // Must have std/support.hpp (actually windows.h) before gl.h so
 // Windows is happy:
+#ifdef __APPLE__
+#include <OpenGL/glu.h>
+#else
 #include <GL/glu.h>
+#endif
 
 using namespace mlib;
 

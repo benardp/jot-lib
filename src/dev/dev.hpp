@@ -486,7 +486,7 @@ class Mouse {
                                                    _buttons.add_handler(h); }
 };
 
-#ifdef macosx
+#ifdef __APPLE__
 #   define DEV_DFLT_SERIAL_PORT "placeholder"
 #elif sgi
 #   define DEV_DFLT_SERIAL_PORT "/dev/ttyd2"

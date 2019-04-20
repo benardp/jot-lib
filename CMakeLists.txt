@@ -57,6 +57,9 @@ ENDIF(UNIX)
 #       this hack prevents disp lib from referencing geom lib...
 #ADD_DEFINITIONS("-DDONT_LINK_GEOM_IN_DISP")
 
+if(APPLE)
+ADD_DEFINITIONS("-DGL_SILENCE_DEPRECATION")
+endif(APPLE)
 
 ## Subdirectories
 

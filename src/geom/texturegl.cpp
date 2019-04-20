@@ -21,7 +21,11 @@
 #include "texturegl.hpp"
 #include "gl_view.hpp"
 
+#ifdef __APPLE__
+#include <OpenGL/glu.h>
+#else
 #include <GL/glu.h>
+#endif
 
 using mlib::Wvec;
 using mlib::Wtransf;
